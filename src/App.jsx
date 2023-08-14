@@ -1,26 +1,13 @@
-import "./App.css"
-import ProductCard from "./components/ProductCard"
 import ProductCounter from "./components/ProductCounter"
+import ProductList from "./components/ProductList"
 import SearchBar from "./components/SearchBar"
-import useStore from "./store"
 
-function App() {
-  const { products, filteredProducts } = useStore()
-
+export default function App() {
   return (
-    <div className="App">
+    <div className="max-w-7xl px-4 mx-auto flex flex-col items-center mt-[64px] ">
       <SearchBar />
-      <div className="">
-        {(filteredProducts.length > 0 ? filteredProducts : products).map(
-          (product) => (
-            <ProductCard key={product.id} product={product} />
-          )
-        )}
-
-        <ProductCounter />
-      </div>
+      <ProductList />
+      <ProductCounter />
     </div>
   )
 }
-
-export default App

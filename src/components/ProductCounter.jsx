@@ -1,9 +1,11 @@
 import useStore from "../store"
 
-function ProductCounter() {
+export default function ProductCounter() {
   const { products, filteredProducts } = useStore()
 
-  return <div>{filteredProducts?.length || products?.length} resultados</div>
+  return (
+    <div className="text-start mt-3 w-5/6 text-[#757575]  ">
+      {filteredProducts?.length || products?.length} resultados
+    </div>
+  )
 }
-
-export default ProductCounter
